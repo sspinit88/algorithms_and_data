@@ -21,22 +21,45 @@ const
   binarySearchArray = userNames.sort();
 
 function binarySearch(arr, val) {
-    let start = 0;
-    let end = arr.length - 1;
-    let middle = Math.floor((end + start) / 2);
+  let start = 0;
+  let end = arr.length - 1;
+  let middle = Math.floor((end + start) / 2);
 
-    while (arr[middle] !== val && start <= end) {
-      if (val < arr[middle]) {
-        end = middle -1;
-      } else {
-        start = middle + 1;
-      }
-      middle = Math.floor((end + start) / 2);
+  while (arr[middle] !== val && start <= end) {
+    if (val < arr[middle]) {
+      end = middle - 1;
     }
-    return arr[middle] === val ? middle : -1;
+    else {
+      start = middle + 1;
+    }
+    middle = Math.floor((end + start) / 2);
+  }
+  return arr[middle] === val ? middle : -1;
 }
+
+// console.log(
+//   binarySearch([2, 5, 6, 7, 15, 16 , 18, 20], 21),
+//   // binarySearchArray,
+//   binarySearch(binarySearchArray, 'jd'),
+// );
+
+
+// Naive String Search
+function naiveSearch(string, val) {
+  let count = 0;
+
+  for (let i = 0; i < string.length; i++) {
+    for (let j = 0; j < val.length; j++) {
+      if (val[j] !== string[i + j]) break;
+      if (j === val.length - 1) count++;
+      if (j === val.length - 1) count++;
+    }
+  }
+  return count;
+}
+
+let string = 'loremloremipsum' ;
+
 console.log(
-  binarySearch([2, 5, 6, 7, 15, 16 , 18, 20], 21),
-  // binarySearchArray,
-  binarySearch(binarySearchArray, 'jd'),
+  naiveSearch(string, 'mip')
 );
