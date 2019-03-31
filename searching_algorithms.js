@@ -52,7 +52,6 @@ function naiveSearch(string, val) {
     for (let j = 0; j < val.length; j++) {
       if (val[j] !== string[i + j]) break;
       if (j === val.length - 1) count++;
-      if (j === val.length - 1) count++;
     }
   }
   return count;
@@ -60,6 +59,6 @@ function naiveSearch(string, val) {
 
 let string = 'loremloremipsum' ;
 
-console.log(
-  naiveSearch(string, 'mip')
-);
+// console.log(
+//   naiveSearch(string, 'mip')
+// );
