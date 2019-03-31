@@ -13,6 +13,13 @@ function linearSearch(array, val) {
   return -1;
 }
 
+// function linearSearchVersion(arr, val) {
+//   arr.forEach((elem) => {
+//     if (elem === val) return 1;
+//   });
+//   return -1;
+// }
+
 let linearSearchResult = linearSearch(userNames, 'jd');
 // console.log(linearSearchResult);
 
